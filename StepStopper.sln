@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepStopper", "StepStopper\StepStopper.csproj", "{1165BD32-90C0-4367-B3BB-C54166AFC810}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5701452D-E59B-4DBB-9DA1-861AA0BE0A74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepStopper.WPFDemo", "StepStopper.WPFDemo\StepStopper.WPFDemo.csproj", "{7C47EE25-87A1-4322-8BA8-399744A7D195}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1165BD32-90C0-4367-B3BB-C54166AFC810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1165BD32-90C0-4367-B3BB-C54166AFC810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1165BD32-90C0-4367-B3BB-C54166AFC810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1165BD32-90C0-4367-B3BB-C54166AFC810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C47EE25-87A1-4322-8BA8-399744A7D195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C47EE25-87A1-4322-8BA8-399744A7D195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C47EE25-87A1-4322-8BA8-399744A7D195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C47EE25-87A1-4322-8BA8-399744A7D195}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
