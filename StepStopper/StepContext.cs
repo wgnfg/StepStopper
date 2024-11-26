@@ -23,13 +23,17 @@ namespace StepStopper
         {
             if (_currentWait.TryTake(out var currentItem))
             {
-                currentItem.SetResult(true);
+                currentItem.TrySetResult(true);
             }
         }
 
         internal Task WaitThisAsync(CancellationToken token = default)
         {
             var newTcs = new TaskCompletionSource<bool>(token);
+            token.Register(() =>
+            {
+                newTcs.TrySetCanceled(token);
+            });
             _currentWait.Add(newTcs);
             return newTcs.Task;
         }
