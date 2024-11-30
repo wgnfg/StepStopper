@@ -10,9 +10,11 @@
         <local:MainWindowViewModel/>
     </Window.DataContext>
     <DockPanel>
-        <DataGrid DockPanel.Dock="Left" ItemsSource="{Binding Items}" AutoGenerateColumns="False">
+        <DataGrid DockPanel.Dock="Left" ItemsSource="{Binding Items}"
+                  GridLinesVisibility="None"
+                  AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn Width="80" Header="断点" Binding="{Binding NeedBreakingPoint,UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridCheckBoxColumn Width="80" Header="断点" Binding="{Binding NeedBreakpoint,UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTextColumn Width="80" Header="当前" Binding="{Binding Value}" />
                 <DataGridTextColumn Width="80" Header="状态" Binding="{Binding Status,UpdateSourceTrigger=PropertyChanged}" />
             </DataGrid.Columns>

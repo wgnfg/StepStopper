@@ -8,8 +8,11 @@ namespace StepStopper
 {
     public class StepContext
     {
+        public StepContext()
+        {
+            Reset();
+        }
         public static readonly StepContext Default = new();
-
         public void Reset()
         {
             NeedNextPause = false;
@@ -38,24 +41,27 @@ namespace StepStopper
             return newTcs.Task;
         }
         /// <summary>
-        /// 中断
+        /// 中断<br/>
+        /// 下一项取出前会暂停
         /// </summary>
-        public void Pause()
+        public void BreakAll()
         {
             NeedNextPause = true;
         }
         /// <summary>
-        /// 逐语句
+        /// 逐语句<br/>
+        /// 开始当前的暂停并停在下一项取出前
         /// </summary>
-        public void NextSingle()
+        public void StepOver()
         {
             CompleteOne();
             NeedNextPause = true;
         }
         /// <summary>
-        /// 逐过程
+        /// 逐过程<br/>
+        /// 开始当前的暂停
         /// </summary>
-        public void NextBreakingPoint()
+        public void Continue()
         {
             CompleteOne();
             NeedNextPause = false;

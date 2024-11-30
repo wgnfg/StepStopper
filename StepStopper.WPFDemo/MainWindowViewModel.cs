@@ -17,7 +17,6 @@ namespace StepStopper.WPFDemo
         [RelayCommand]
         public async Task Run()
         {
-            Items = Enumerable.Range(0, 100).AsSingleStepsObject(_stepStoper).ToList();
             _cts = new CancellationTokenSource();
             var token = _cts.Token;
             try
@@ -29,9 +28,8 @@ namespace StepStopper.WPFDemo
                     await Task.Delay(1000);
                     item.SetEnd();
                 }
-                _cts.Dispose();
             }
-            catch (OperationCanceledException cancel)
+            catch (OperationCanceledException)
             {
 
             }
@@ -40,6 +38,7 @@ namespace StepStopper.WPFDemo
                 _cts.Dispose();
                 _cts = null;
                 _stepStoper.Reset();
+                Items = Enumerable.Range(0, 100).AsSingleStepsObject(_stepStoper).ToList();
             }
         }
         [RelayCommand]
@@ -50,17 +49,17 @@ namespace StepStopper.WPFDemo
         [RelayCommand]
         public void Pause()
         {
-            _stepStoper.Pause();
+            _stepStoper.BreakAll();
         }
         [RelayCommand]
         public void NextSingle()
         {
-            _stepStoper.NextSingle();
+            _stepStoper.StepOver();
         }
         [RelayCommand]
         public void NextBreakingPoint()
         {
-            _stepStoper.NextBreakingPoint();
+            _stepStoper.Continue();
         }
     }
 }

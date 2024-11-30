@@ -17,7 +17,7 @@ namespace StepStopper
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
-        public bool NeedBreakingPoint { get; set; }
+        public bool NeedBreakpoint { get; set; }
         private StepStatus _status = StepStatus.NotStarted;
         public StepStatus Status
         {
@@ -33,7 +33,7 @@ namespace StepStopper
 
         public async Task<T?> StepValue(CancellationToken token)
         {
-            if (Context.NeedNextPause || NeedBreakingPoint)
+            if (Context.NeedNextPause || NeedBreakpoint)
             {
                 Status = StepStatus.Waiting;
                 await Context.WaitThisAsync(token).ConfigureAwait(false);
